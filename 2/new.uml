@@ -1,0 +1,33 @@
+@startuml
+class Library {
+  - List<Book> availableBooks
+  - List<Member> members
+  + addBook(Book book)
+  + registerMember(Member member)
+  + checkoutBook(String isbn, int memberId)
+  + returnBook(String isbn, int memberId)
+}
+
+class Book {
+  - String title
+  - String author
+  - String ISBN
+  + Book(String title, String author, String ISBN)
+  + getTitle()
+  + getAuthor()
+  + getISBN()
+}
+
+class Member {
+  - int memberId
+  - String name
+  - List<Book> borrowedBooks
+  + Member(int memberId, String name)
+  + borrowBook(Book book)
+  + returnBook(Book book)
+}
+
+Library "1" -- "*" Book : contains
+Library "1" -- "*" Member : manages
+Member "1" -- "*" Book : borrows
+@enduml
