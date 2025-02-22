@@ -4,13 +4,10 @@ class Main{
         Human mother = new Human("Jane", "Karleone", 1950);
         Human father = new Human("Vito", "Karleone", 1945);
         String[][] schedule = {{"Monday", "Gym"}, {"Tuesday", "Swimming"}};
-        Human child = new Human("Michael", "Karleone", 1970, 90, pet,mother, father, schedule);      
+        Human child = new Human("Michael", "Karleone", 1970, 90, pet, mother, father, schedule);      
         System.out.println(child);
-        child.greetPet();
-        child.DescribePet();
         pet.eat();
         pet.respond();
         pet.foul();
-        child.feedPet(false);  
     }
 }
